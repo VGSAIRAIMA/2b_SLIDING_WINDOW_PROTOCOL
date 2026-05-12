@@ -14,15 +14,6 @@ To implement sliding window protocol.
 ```
 import socket
 s=socket.socket()
-s.connect(('localhost', 8000))
-while True:
-   print(s.recv(1024).decode())
-   s.send("acknowledgement received from the server".encode())
-```
-## SERVER
-```
-import socket
-s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5);
 c,add = s.accept()
@@ -39,6 +30,15 @@ while True:
     if ack:
        print(ack)
        i+=s
+```
+## SERVER
+```
+import socket
+s=socket.socket()
+s.connect(('localhost', 8000))
+while True:
+   print(s.recv(1024).decode())
+   s.send("acknowledgement received from the server".encode())
 ```
 ## OUPUT
 ![IMAGE](https://github.com/VGSAIRAIMA/2b_SLIDING_WINDOW_PROTOCOL/blob/main/Screenshot%202026-05-12%20054626.png)
